@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import Logo from "../../constants/constants";
 import {
   AiFillFacebook,
   AiFillGithub,
@@ -16,6 +17,8 @@ import {
   NavLink,
   SocialIcons,
   Span,
+  Img,
+  HeaderSpan,
 } from "./HeaderStyles";
 
 const Header = () => (
@@ -27,11 +30,11 @@ const Header = () => (
             display: "flex",
             alignItems: "center",
             color: "white",
-            marginBottom: "20px",
+            // marginBottom: "20px",
           }}
         >
-          <DiCssdeck size="3rem" />
-          <Span>Portfolio</Span>
+          <Img src={"/images/Logo.png"} />
+          <HeaderSpan>Our Communication</HeaderSpan>
         </a>
       </Link>
     </Div1>
@@ -54,13 +57,13 @@ const Header = () => (
     </Div2>
     <Div3>
       <SocialIcons href="https://facebook.com">
-        <AiFillFacebook size="3rem" />
+        <AiFillFacebook size="5em" />
       </SocialIcons>
       <SocialIcons href="https://Linkedin.com">
-        <AiFillLinkedin size="3rem" />
+        <AiFillLinkedin size="5em" />
       </SocialIcons>
       <SocialIcons href="https://Instagram.com">
-        <AiFillInstagram size="3rem" />
+        <AiFillInstagram size="5em" />
       </SocialIcons>
     </Div3>
   </Container>

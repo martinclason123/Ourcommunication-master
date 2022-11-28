@@ -41,6 +41,7 @@ export const projects = [
   },
 ];
 
+export const logo = "./images/Logo.png";
 export const TimeLineData = [
   { year: 1994, text: "Started my journey" },
   { year: 2000, text: "Fixed the Y2K bug" },
