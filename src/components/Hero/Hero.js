@@ -1,39 +1,56 @@
 import React, { useState } from "react";
 import Form from "../Form/Form";
-import {
-  Section,
-  SectionText,
-  SectionTitle,
-} from "../../styles/GlobalComponents";
+import BGMobile from "../BackgrooundAnimation/BGMobile";
+import { Section } from "../../styles/GlobalComponents";
 import Button from "../../styles/GlobalComponents/Button";
-import { LeftSection } from "./HeroStyles";
+import {
+  LeftSection,
+  MobileAnimationDiv,
+  HeroSubheading,
+  HeroTitle,
+  HeroContact,
+  ContactTitle,
+  ContactBold,
+} from "./HeroStyles";
 
 const Hero = () => {
   const [showForm, setShowForm] = useState(false);
-
+  function changeVisibility() {
+    setShowForm(false);
+  }
   return (
     <>
       <Section row nopadding>
         <LeftSection>
-          <SectionTitle main center>
+          <HeroTitle main center>
             Our <br />
             Communication, LLC
-          </SectionTitle>
-          <SectionText>
+          </HeroTitle>
+          <HeroSubheading>
             Meeting communications needs throughout Michigan. Specializing in
             fiber optics, copper, cellular towers, satellite, and more.
-          </SectionText>
+          </HeroSubheading>
+          <MobileAnimationDiv>
+            <BGMobile></BGMobile>
+          </MobileAnimationDiv>
           <Button
             onClick={() => {
-              // window.location = "https://google.com";
-              setShowForm(true);
+              window.location = "/#contact";
             }}
           >
             Get Started
           </Button>
+          <HeroContact>
+            <ContactTitle>
+              <ContactBold>Phone: </ContactBold> 616.881.6760
+            </ContactTitle>
+            <ContactTitle>
+              <ContactBold>Email: </ContactBold> ricardo@ourcomm.net
+            </ContactTitle>
+          </HeroContact>
         </LeftSection>
       </Section>
-      {showForm ? <Form /> : null}
+      {showForm ? <Form changeVisibility={changeVisibility} /> : null}
     </>
   );
 };
