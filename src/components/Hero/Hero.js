@@ -11,6 +11,7 @@ import {
   HeroContact,
   ContactTitle,
   ContactBold,
+  Img,
 } from "./HeroStyles";
 
 const Hero = () => {
@@ -22,13 +23,16 @@ const Hero = () => {
     <>
       <Section row nopadding>
         <LeftSection>
+          <Img src={"/images/hero-logo.png"} />
           <HeroTitle main center>
-            Our <br />
-            Communication, LLC
+            Our Communication, LLC
           </HeroTitle>
           <HeroSubheading>
-            Meeting communications needs throughout Michigan. Specializing in
-            fiber optics, copper, cellular towers, satellite, and more.
+            Meeting your communication engineering, and network construction
+            needs.
+          </HeroSubheading>
+          <HeroSubheading>
+            All mediums with a specialty in Fiber Optics.
           </HeroSubheading>
           <MobileAnimationDiv>
             <BGMobile></BGMobile>
