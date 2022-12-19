@@ -99,6 +99,54 @@ export const Header = styled.h2`
   }
 `;
 
+export const SuccessHeader = styled.h2`
+  margin: 0;
+  font-size: 4em;
+  text-align: left;
+  width: 60%;
+  background: linear-gradient(
+    121.57deg,
+    #ffffff 18.77%,
+    rgba(255, 255, 255, 0.66) 60.15%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  @media (max-width: 640px) {
+    width: 80%;
+    font-size: 3em;
+  }
+  @media (min-width: 641px) {
+    width: 16.5em;
+    font-size: 5em;
+    margin-left: 2em;
+  }
+`;
+
+export const Divider = styled.div`
+  width: 64px;
+  height: 6px;
+  border-radius: 10px;
+  background-color: #fff;
+  background: ${(props) =>
+    props.colorAlt
+      ? "linear-gradient(270deg, #F46737 0%, #945DD6 100%)"
+      : "linear-gradient(270deg, #13ADC7 0%, #945DD6 100%)"};
+
+  margin: ${(props) => (props.divider ? "4rem 0" : "")};
+
+  @media (min-width: 641px) {
+    width: 80%;
+    margin 3em 0 3em 10em;
+    height: 4px;
+  }
+
+  @media (max-width: 640px) {
+    width: 80%;
+    margin 2em 0;
+    height: 2px;
+  }
+`;
+
 export const TextInput = styled.input.attrs((props) => ({
   type: "text",
   size: props.size || "2em",
@@ -178,7 +226,7 @@ export const FormButton = styled.div`
     // margin-bottom: ${({ alt }) => (alt ? "0" : "64px")};
     width: 8em;
     font-size: 4em;
-    margin: 2em 0 2em 16.5em;
+    margin: ${({ noMarg }) => (noMarg ? "1em 2.5em" : "2em 0 2em 16.5em")};
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
@@ -186,5 +234,25 @@ export const FormButton = styled.div`
     height: 32px;
     font-size: 14px;
     margin-bottom: ${({ alt }) => (alt ? "0" : "32px")};
+    margin-top: 2em;
+  }
+`;
+
+export const ListParagraph = styled.p`
+  font-size: 18px;
+  line-height: 30px;
+  color: rgba(255, 255, 255, 0.75);
+
+  @media (min-width: 641px) {
+    font-size: 2.4em;
+    line-height: 28px;
+    margin-left: 4em;
+    width: 35em;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 2.4em;
+    line-height: 22px;
+    width: 22em;
   }
 `;
