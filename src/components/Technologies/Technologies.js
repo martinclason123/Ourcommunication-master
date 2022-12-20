@@ -6,51 +6,90 @@ import {
   SectionText,
   SectionTitle,
 } from "../../styles/GlobalComponents";
+
 import {
   List,
   ListContainer,
   ListItem,
   ListParagraph,
   ListTitle,
+  TechUl,
+  TechLi,
+  ListIcon,
 } from "./TechnologiesStyles";
 
+import { copperIcon, rfIcon, fiberIcon } from "../../constants/constants";
+const copperList = [
+  "High bandwidth, Short distance multi mode fiber",
+  "FTTP long distance single mode fiber",
+  "Piece rate builds",
+  "Characterization testing and certification",
+  "EMERGENCY REPAIR",
+];
+const ethernetList = [
+  "Wiring new drops and equipment",
+  "Tower wiring",
+  "Connection to infrastructure",
+  "Characterization testing and certification",
+  "Cable management and patch panel clean-up",
+];
+const rfList = [
+  "Building to building",
+  "Tower to head-end ",
+  "PTP/PTMP",
+  "Tower to tower ",
+];
 const Technologies = () => (
   <Section id="tech">
     <SectionDivider />
     <br />
     <SectionTitle>Technologies</SectionTitle>
 
-    <SectionText>
-      I have worked with a range of communications technologies. From copper
-      data lines, to fiber optics and cellular towers.
-    </SectionText>
     <List>
       <ListItem>
-        <DiFirebase size="3rem" />
+        <ListIcon width={"85px"} src={fiberIcon}></ListIcon>
         <ListContainer>
-          <ListTitle>Copper</ListTitle>
+          <ListTitle>Fiber</ListTitle>
+
+          <TechUl>
+            {copperList.map((item) => (
+              <TechLi>{`${item}`}</TechLi>
+            ))}
+          </TechUl>
           <ListParagraph>
-            Experience with copper data cabling. CAT5, CAT6, Coax, and more
+            Whatever your need, we have designed, constructed, and turned up
+            thousands of miles for our clients.
           </ListParagraph>
         </ListContainer>
       </ListItem>
       <ListItem>
-        <DiFirebase size="3rem" />
+        <ListIcon src={copperIcon}></ListIcon>
         <ListContainer>
-          <ListTitle>Fiber Optics</ListTitle>
+          <ListTitle>Ethernet</ListTitle>
+          <TechUl>
+            {ethernetList.map((item) => (
+              <TechLi>{`${item}`}</TechLi>
+            ))}
+          </TechUl>
           <ListParagraph>
-            Experience with design and implementation of fiber optic networks,
-            aerial and buried.
+            From conception to turn-up, we can manage and organize your existing
+            infrastructure to create an environment of longevity, whatever the
+            medium.
           </ListParagraph>
         </ListContainer>
       </ListItem>
       <ListItem>
-        <DiFirebase size="3rem" />
+        <ListIcon src={rfIcon}></ListIcon>
         <ListContainer>
-          <ListTitle>Satellite</ListTitle>
+          <ListTitle>RF</ListTitle>
+          <TechUl>
+            {rfList.map((item) => (
+              <TechLi>{`${item}`}</TechLi>
+            ))}
+          </TechUl>
           <ListParagraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua
+            We can help you engineer a design, permit, construct and turn up
+            your short and long distance radio frequency signals
           </ListParagraph>
         </ListContainer>
       </ListItem>

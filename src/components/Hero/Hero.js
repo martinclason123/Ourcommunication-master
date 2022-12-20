@@ -12,6 +12,7 @@ import {
   ContactTitle,
   ContactBold,
   Img,
+  HeroBr,
 } from "./HeroStyles";
 
 const Hero = () => {
@@ -21,7 +22,7 @@ const Hero = () => {
   }
   return (
     <>
-      <Section row nopadding>
+      <Section row nopadding id="home">
         <LeftSection>
           <Img src={"/images/hero-logo.png"} />
           <HeroTitle main center>
@@ -32,7 +33,8 @@ const Hero = () => {
             needs.
           </HeroSubheading>
           <HeroSubheading>
-            All mediums with a specialty in Fiber Optics.
+            All mediums with a specialty in <HeroBr />
+            Fiber Optics.
           </HeroSubheading>
           <MobileAnimationDiv>
             <BGMobile></BGMobile>

@@ -91,7 +91,7 @@ export const HeroTitle = styled.h2`
   }
 `;
 
-const HeroBr = styled.br`
+export const HeroBr = styled.br`
   @media (max-width: 640px) {
     display: none;
   }
