@@ -53,3 +53,4 @@ export const TimeLineData = [
 export const copperIcon = "./images/copperLogo.svg";
 export const fiberIcon = "./images/fiberIcon.svg";
 export const rfIcon = "./images/rfIcon.svg";
+export const ricPortrait = "./images/ric_portrait.jpg";

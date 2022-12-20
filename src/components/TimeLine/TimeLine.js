@@ -1,23 +1,13 @@
 import React, { useState, useRef, useEffect } from "react";
 
-import {
-  CarouselButton,
-  CarouselButtonDot,
-  CarouselButtons,
-  CarouselContainer,
-  CarouselItem,
-  CarouselItemImg,
-  CarouselItemText,
-  CarouselItemTitle,
-  CarouselMobileScrollNode,
-} from "./TimeLineStyles";
+import { PortaitImg } from "./TimeLineStyles";
 import {
   Section,
   SectionDivider,
   SectionText,
   SectionTitle,
 } from "../../styles/GlobalComponents";
-import { TimeLineData } from "../../constants/constants";
+import { TimeLineData, ricPortrait } from "../../constants/constants";
 
 const TOTAL_CAROUSEL_COUNT = TimeLineData.length;
 
@@ -66,12 +56,57 @@ const Timeline = () => {
   return (
     <Section id="about">
       <SectionTitle>About Me</SectionTitle>
-      <SectionText>
-        For years, Ricardo Carroll has worked across residential, commercial,
-        and industrial platforms to solve complex communication issues. Our
-        Communication was built from his wealth of knowledge and experience.
+      <PortaitImg src={ricPortrait} />
+      <SectionText light>
+        For years, I have worked across Residential, Commercial, and Industrial
+        platforms to solve complex communications issues and resolve them to the
+        highest standard of completion and customer satisfaction.
       </SectionText>
-      <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
+      <SectionText light>
+        Building networks to withstand the tests of time, along with a constant
+        management of budget and efficiency.
+      </SectionText>
+      <SectionText light>
+        I have had the pleasure of engineering for our City of Grand Rapids
+        inter-departmentally, and our surrounding municipalities. To create and
+        build solutions and increase effectiveness of networks. In design and
+        construction on every level, I have helped to maintain the effectiveness
+        of all levels of communications, including our cities emergency
+        communications.
+      </SectionText>
+      <SectionText light>
+        Survey engineering, for industrial and commercial application, has been
+        provided at every level to assist my clients. For communications of
+        point to point connectivity around our state and surrounding states.
+        These surveys will give my clients perspective on routes available,
+        engineering of those routes, permitting for construction, and finally
+        construction and turn up.
+      </SectionText>
+      <SectionText light>
+        For my private clients I have had the opportunity to enhance and expand
+        residential input of data from their ISPs, and expand their experiences
+        with data while at home and on vacation. These projects often include
+        advanced security systems for on and offsite monitoring of those sites.
+      </SectionText>
+      <SectionText light>
+        At the commercial level, my clientele, often at campus or city size
+        deployment of network additions or subtractions, require a unique
+        engineering eye. I have been able to help their direction for strength
+        and reliability in these often updating/upgrading and downgrading of
+        infrastructure. With our experience in this field, proven techniques to
+        provide future upgrading and downgrading is first and foremost in our
+        design and construction.
+      </SectionText>
+      <SectionText light>
+        Our partnerships allow cost effective, on time engineering,
+        construction, and turn-up of networks at any level or scope.
+      </SectionText>
+      <SectionText light>
+        Our Communication is able to work closely with you. Ensuring your needs
+        are met. Satisfaction is guaranteed.
+      </SectionText>
+
+      {/* <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
         <>
           {TimeLineData.map((item, index) => (
             <CarouselMobileScrollNode
@@ -137,7 +172,7 @@ const Timeline = () => {
             <CarouselButtonDot active={activeItem} />
           </CarouselButton>
         ))}
-      </CarouselButtons>
+      </CarouselButtons> */}
       <SectionDivider />
     </Section>
   );
