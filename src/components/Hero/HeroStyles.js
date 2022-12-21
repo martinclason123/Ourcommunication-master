@@ -123,6 +123,11 @@ export const ContactTitle = styled.p`
   }
 `;
 
-export const ContactBold = styled.span`
+export const ContactBold = styled.a`
   font-weight: bold;
+  color: #fff;
+`;
+
+export const ContactRegular = styled.span`
+  font-weight: normal;
 `;

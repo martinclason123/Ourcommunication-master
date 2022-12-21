@@ -23,29 +23,39 @@ const Footer = () => {
   return (
     <FooterWrapper>
       <LinkList>
-        <LinkColumn>
-          <LinkTitle>Call</LinkTitle>
-          <LinkItem href="tel:616-881-6760">616-881-6760</LinkItem>
-        </LinkColumn>
-        <LinkColumn>
-          <LinkTitle>Email</LinkTitle>
-          <LinkItem href="mailto:ricardocarroll72@gmail.com">
-            ricardocarroll72@gmail.com
-          </LinkItem>
-        </LinkColumn>
+        <li>
+          <LinkColumn>
+            <LinkTitle>Call</LinkTitle>
+            <LinkItem href="tel:616-881-6760">616-881-6760</LinkItem>
+          </LinkColumn>
+        </li>
+        <li>
+          <LinkColumn>
+            <LinkTitle>Email</LinkTitle>
+            <LinkItem href="mailto:ricardocarroll72@gmail.com">
+              ricardo@ourcomm.net
+            </LinkItem>
+          </LinkColumn>
+        </li>
       </LinkList>
       <SocialIconsContainer>
         <CompanyContainer>
           <Slogan>On Budget. On Time</Slogan>
         </CompanyContainer>
         <SocialContainer>
-          <SocialIcons href="https://facebook.com">
+          <SocialIcons
+            href="https://www.facebook.com/profile.php?id=100084148452606"
+            aria-label="Facebook"
+          >
             <AiFillFacebook size="3rem" />
           </SocialIcons>
-          <SocialIcons href="https://Linkedin.com">
+          <SocialIcons
+            href="https://www.linkedin.com/in/ricardo-carroll-79830a92/"
+            aria-label="LinkedIn"
+          >
             <AiFillLinkedin size="3rem" />
           </SocialIcons>
-          <SocialIcons href="https://Instagram.com">
+          <SocialIcons href="https://Instagram.com" aria-label="Instagram">
             <AiFillInstagram size="3rem" />
           </SocialIcons>
         </SocialContainer>

@@ -1,9 +1,9 @@
 import React from "react";
-import { DiFirebase, DiReact, DiZend } from "react-icons/di";
+import Head from "next/head";
+
 import {
   Section,
   SectionDivider,
-  SectionText,
   SectionTitle,
 } from "../../styles/GlobalComponents";
 
@@ -41,13 +41,20 @@ const rfList = [
 ];
 const Technologies = () => (
   <Section id="tech">
+    <Head>
+      <title>Technologies</title>
+      <meta
+        name="description"
+        content="Fiber - Multi mode and single mode, new construction and emergency repair. Copper/Ethernet - Wiring new drops/troubleshooting, cable management. RF technology"
+      />
+    </Head>
     <SectionDivider />
     <br />
     <SectionTitle>Technologies</SectionTitle>
 
     <List>
       <ListItem>
-        <ListIcon width={"85px"} src={fiberIcon}></ListIcon>
+        <ListIcon width={"85px"} src={fiberIcon} alt="fiber icon"></ListIcon>
         <ListContainer>
           <ListTitle>Fiber</ListTitle>
 
@@ -63,7 +70,7 @@ const Technologies = () => (
         </ListContainer>
       </ListItem>
       <ListItem>
-        <ListIcon src={copperIcon}></ListIcon>
+        <ListIcon src={copperIcon} alt="copper cable icon"></ListIcon>
         <ListContainer>
           <ListTitle>Ethernet</ListTitle>
           <TechUl>
@@ -79,7 +86,7 @@ const Technologies = () => (
         </ListContainer>
       </ListItem>
       <ListItem>
-        <ListIcon src={rfIcon}></ListIcon>
+        <ListIcon src={rfIcon} alt="radio signal icon"></ListIcon>
         <ListContainer>
           <ListTitle>RF</ListTitle>
           <TechUl>

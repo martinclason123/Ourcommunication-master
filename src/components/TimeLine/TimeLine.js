@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import Head from "next/head";
 
 import { PortaitImg } from "./TimeLineStyles";
 import {
@@ -56,7 +57,14 @@ const Timeline = () => {
   return (
     <Section id="about">
       <SectionTitle>About Me</SectionTitle>
-      <PortaitImg src={ricPortrait} />
+      <Head>
+        <title>About Me</title>
+        <meta
+          name="description"
+          content="Years of experience with commercial, residential, and industrial clients. On budget, on time."
+        />
+      </Head>
+      <PortaitImg src={ricPortrait} alt="Riccardo Carol" />
       <SectionText light>
         For years, I have worked across Residential, Commercial, and Industrial
         platforms to solve complex communications issues and resolve them to the

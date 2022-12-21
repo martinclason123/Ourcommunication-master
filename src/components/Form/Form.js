@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import Head from "next/head";
 
 import {
   Section,
   SectionTitle,
   SectionDivider,
 } from "../../styles/GlobalComponents";
-import Button from "../../styles/GlobalComponents/Button";
+
 import axios from "axios";
 
 import {
@@ -19,6 +20,7 @@ import {
   SuccessHeader,
   ListParagraph,
   Divider,
+  ErrorParagraph,
 } from "./FormStyles";
 const Form = () => {
   const [name, updateName] = useState("");
@@ -26,43 +28,67 @@ const Form = () => {
   const [phone, updatePhone] = useState("");
   const [message, updateMessage] = useState("");
   const [submitting, setSubmitting] = useState(false);
-  const [formStatusMessage, setformStatusMessage] = useState("");
+  const [messageError, setMessageError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
   const [success, setSuccess] = useState(false);
 
+  const formValidator = () => {
+    let errors = false;
+    if (message.length < 10) {
+      errors = true;
+      setMessageError(true);
+    }
+
+    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
+      setEmailError(true);
+      errors = true;
+    }
+
+    return errors;
+  };
+
   const handleSubmit = () => {
-    let formMessage = `New message from ${name}:
+    let errors = formValidator();
+    if (!errors) {
+      let formMessage = `New message from ${name}:
         ${message}
 
         contact Information:
         Email: ${email}
         Phone: ${phone}
         `;
-    setSubmitting(true);
-    setformStatusMessage("Submitting....");
+      setSubmitting(true);
 
-    axios
-      .post("https://submit-form.com/vJsIuuou", {
-        message: formMessage,
-      })
-      .then(function (response) {
-        if (response.status === 200) {
-          setSubmitting(false);
-          setSuccess(true);
-        }
-      })
-      .catch(function (response) {
-        console.error(response);
-        setformStatusMessage("Something went wrong, please try again.");
-      });
+      axios
+        .post("https://submit-form.com/vJsIuuou", {
+          message: formMessage,
+        })
+        .then(function (response) {
+          if (response.status === 200) {
+            setSubmitting(false);
+            setSuccess(true);
+          }
+        })
+        .catch(function (response) {
+          console.error(response);
+        });
+    }
   };
 
   return (
     <>
       <Section id="contact">
+        <Head>
+          <title>Contact</title>
+          <meta
+            name="description"
+            content="Quickly submit your request and we will respond to you as soon as possible"
+          />
+        </Head>
         <SectionTitle main>Contact </SectionTitle>
         <FullScreen>
           {submitting ? (
-            <>submitting...</>
+            <SuccessHeader>Submitting</SuccessHeader>
           ) : (
             <>
               {success ? (
@@ -85,32 +111,55 @@ const Form = () => {
               ) : (
                 <>
                   <FormTextItem>
-                    <Header>Name</Header>
+                    <Header for="name">Name</Header>
                     <TextInput
+                      id="name"
                       onChange={(e) => {
                         updateName(e.target.value);
                       }}
                     />
                   </FormTextItem>
+                  {emailError === true ? (
+                    <ErrorParagraph smallMargin>
+                      Valid email is required
+                    </ErrorParagraph>
+                  ) : null}
                   <FormTextItem>
-                    <Header>Email</Header>
+                    <Header for="email">Email</Header>
                     <TextInput
+                      borderRed={emailError}
+                      id="email"
+                      onClick={() => {
+                        setEmailError(false);
+                      }}
                       onChange={(e) => {
                         updateEmail(e.target.value);
                       }}
                     />
                   </FormTextItem>
                   <FormTextItem>
-                    <Header>Phone</Header>
+                    <Header for="phone">Phone</Header>
                     <TextInput
+                      id="phone"
                       onChange={(e) => {
                         updatePhone(e.target.value);
                       }}
                     />
                   </FormTextItem>
+                  {messageError === true ? (
+                    <ErrorParagraph>
+                      Message must be at least 10 characters
+                    </ErrorParagraph>
+                  ) : null}
+
                   <FormTextArea>
-                    <Header>Message</Header>
+                    <Header for="message">Message</Header>
                     <TextArea
+                      id="message"
+                      borderRed={messageError}
+                      onClick={() => {
+                        setMessageError(false);
+                      }}
                       onChange={(e) => {
                         updateMessage(e.target.value);
                       }}

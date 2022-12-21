@@ -7,6 +7,7 @@ export const projects = [
     tags: ["Fiber", "Ethernet", "RF"],
     source: "https://google.com",
     visit: "https://google.com",
+    alt: "City of Grand Rapids logo",
     id: 0,
   },
   {
@@ -17,6 +18,7 @@ export const projects = [
     tags: ["Fiber", "Ethernet", "RF"],
     source: "https://google.com",
     visit: "https://google.com",
+    alt: "John Ball Zoo logo",
     id: 1,
   },
   // {

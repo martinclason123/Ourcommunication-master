@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 
 import {
   BlogCard,
@@ -22,13 +23,20 @@ import { projects } from "../../constants/constants";
 
 const Projects = () => (
   <Section nopadding id="projects">
+    <Head>
+      <title>Projects</title>
+      <meta
+        name="description"
+        content="Read about our completed projects, including customers such as the City of Grand Rapids, and the John Ball Zoo."
+      />
+    </Head>
     <SectionDivider />
     <SectionTitle main>Projects</SectionTitle>
     <GridContainer>
       {projects.map(
-        ({ id, image, title, description, tags, source, visit }) => (
+        ({ id, image, title, description, tags, source, visit, alt }) => (
           <BlogCard key={id}>
-            <Img src={image} />
+            <Img src={image} alt={alt} />
             <TitleContent>
               <HeaderThree title>{title}</HeaderThree>
               <Hr />

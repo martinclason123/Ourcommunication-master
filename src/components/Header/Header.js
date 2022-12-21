@@ -3,11 +3,9 @@ import React from "react";
 import Logo from "../../constants/constants";
 import {
   AiFillFacebook,
-  AiFillGithub,
   AiFillInstagram,
   AiFillLinkedin,
 } from "react-icons/ai";
-import { DiCssdeck } from "react-icons/di";
 
 import {
   Container,
@@ -33,7 +31,7 @@ const Header = () => (
             // marginBottom: "20px",
           }}
         >
-          <Img src={"/images/Logo.png"} />
+          <Img src={"/images/Logo.png"} alt="Our Communication logo" />
           <HeaderSpan>Our Communication</HeaderSpan>
         </a>
       </Link>
@@ -41,17 +39,17 @@ const Header = () => (
     <Div2>
       <li>
         <Link href="#projects">
-          <NavLink>Projects</NavLink>
+          <NavLink href="#projects">Projects</NavLink>
         </Link>
       </li>
       <li>
         <Link href="#tech">
-          <NavLink>Technologies</NavLink>
+          <NavLink href="#tech">Technologies</NavLink>
         </Link>
       </li>
       <li>
         <Link href="#about">
-          <NavLink>About</NavLink>
+          <NavLink href="#about">About</NavLink>
         </Link>
       </li>
     </Div2>

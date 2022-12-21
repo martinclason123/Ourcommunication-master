@@ -75,7 +75,7 @@ export const FormTextArea = styled.div`
     // width: 100%;
   }
 `;
-export const Header = styled.h2`
+export const Header = styled.label`
   margin: 0;
   font-size: 4em;
   text-align: left;
@@ -151,7 +151,8 @@ export const TextInput = styled.input.attrs((props) => ({
   type: "text",
   size: props.size || "2em",
 }))`
-  border: 1px solid #fff;
+  border: ${(props) =>
+    props.borderRed === true ? "1px solid red" : "1px solid white"};
   font-size: 2.4em;
   width: 30em;
 
@@ -170,7 +171,8 @@ export const TextArea = styled.textarea.attrs((props) => ({
   //   type: "text",
   size: props.size || "2em",
 }))`
-  border: 1px solid #fff;
+  border: ${(props) =>
+    props.borderRed === true ? "1px solid red" : "1px solid white"};
   font-size: 2.4em;
   width: 30em;
   height: 10em;
@@ -233,7 +235,7 @@ export const FormButton = styled.div`
     width: 98%;
     height: 32px;
     font-size: 14px;
-    margin-bottom: ${({ alt }) => (alt ? "0" : "32px")};
+    margin-bottom: ${({ alt }) => (alt ? "0" : "32px")};i
     margin-top: 2em;
   }
 `;
@@ -254,5 +256,27 @@ export const ListParagraph = styled.p`
     font-size: 2.4em;
     line-height: 22px;
     width: 22em;
+  }
+`;
+
+export const ErrorParagraph = styled.p`
+  font-size: 18px;
+  line-height: 30px;
+  color: red;
+  text-align: right;
+
+  @media (min-width: 641px) {
+    font-size: 2.4em;
+    line-height: 28px;
+    // margin-left: 4.75em;
+    margin-left: ${({ smallMargin }) => (smallMargin ? "-4em" : "4.75em")};
+    width: 35em;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 1.6em;
+    line-height: 22px;
+    margin-right: 2em;
+    // width: 22em;
   }
 `;
