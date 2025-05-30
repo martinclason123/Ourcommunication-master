@@ -8,12 +8,7 @@ export const Img = styled.img`
 `;
 
 export const GridContainer = styled.section`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  padding: 3rem;
-  place-items: center;
-  column-gap: 2rem;
-  row-gap: 3rem;
+  display: flex;
   @media ${(props) => props.theme.breakpoints.sm} {
     display: flex;
     flex-direction: column;
@@ -106,4 +101,13 @@ export const TagList = styled.ul`
 export const Tag = styled.li`
   color: #d8bfbf;
   font-size: 1.5rem;
+`;
+export const CustomerList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  li {
+    font-size: 1.4em;
+  }
 `;

@@ -56,3 +56,31 @@ export const copperIcon = "./images/copperLogo.svg";
 export const fiberIcon = "./images/fiberIcon.svg";
 export const rfIcon = "./images/rfIcon.svg";
 export const ricPortrait = "./images/ric_portrait.jpg";
+export const customers = [
+  "City of Grand Rapids MI",
+  "Kent County MI",
+  "John Ball Zoo",
+  "Severance Electric",
+  "US Steel",
+  "Padagis",
+  "Innov8",
+  "AEG",
+  "Access Parks",
+  "National Electric Corporation",
+  "Smooth Automation",
+  "Spectrotel",
+  "Computacenter",
+  "Wachter - Nationwide Service",
+  "Stratacache",
+  "AVIT",
+  "Spencer",
+  "Velo IT Group",
+  "Broadview Solutions",
+  "Athena Technology Solutions",
+  "Wayne Communications",
+  "Core Technology Solutions",
+  "Kinettix, Inc",
+  "Blueprint RF",
+  "Clear Rate Communications",
+  "Nationwide SCS"
+]
